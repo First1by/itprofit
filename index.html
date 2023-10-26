@@ -17,19 +17,22 @@
 		<label>
 			<span class="input-title">Имя:</span>
 			<input class="input" type="text" name="name" id="name" placeholder="Иван Иванов " autofocus="">
+			<div class="invalid-text"></div>
 		</label>
 		<label>
 			<span class="input-title">Email:</span>
 			<input class="input" type="text" name="email" id="email" placeholder="ivan@gmail.com">
+			<div class="invalid-text"></div>
 		</label>
 		<label>
 			<span class="input-title">Телефон:</span>
 			<input class="input" type="number" name="number">
+			<div class="invalid-text"></div>
 		</label>
 		<label>
 			<span class="input-title">Сообщение:</span>
-			<textarea class="input-textarea" id="story" name="message" rows="4" cols="33"
-				placeholder="Ваше сообщение..."></textarea>
+			<textarea class="input-textarea" id="story" name="message" rows="4" cols="33" placeholder="Ваше сообщение..."></textarea>
+			<div class="invalid-text"></div>
 		</label>
 		<button class="button button-yellow" type="submit">Отправить заявку</button>
 		<div id="loader" class="hidden">Отправляем...</div>
