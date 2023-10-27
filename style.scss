@@ -12,6 +12,8 @@
 
   body {
     position: static;
+    overflow-y: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     background-color: #18191c;
@@ -58,13 +60,13 @@
       left: calc(50% - 325px);
       z-index: 1;
       display: block;
-      // width: 100%;
       max-width: 650px;
       max-height: 750px;
       margin: 0 auto;
       left: 30px;
       right: 30px;
       padding: 0 45px;
+      padding-bottom: 15px;
       background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 16px;
@@ -95,9 +97,18 @@
       font-size: 20px;
       line-height: 26px;
 
+      &:hover {
+        transition: all 0.2s;
+        box-shadow: 0px 0px 3px rgb(13 96 111), 0px 2px 3px rgb(35 38 38);
+      }
+
       a {
         display: block;
         padding: 15px 0px;
+
+        &:hover {
+          color: #ffffff;
+        }
 
         svg {
           margin-right: 10px;
@@ -114,6 +125,11 @@
       font-weight: 300;
       font-size: 20px;
       line-height: 26px;
+
+      &:hover {
+        transition: all 0.2s;
+        box-shadow: 0px 0px 3px rgb(13 96 111), 0px 2px 3px rgb(35 38 38);
+      }
 
       a {
         display: block;
@@ -197,8 +213,25 @@
       color: #FFFFFF;
       background-color: #0D606F;
       cursor: pointer;
+
+      &:hover {
+        transition: all 0.2s;
+        box-shadow: 0px 0px 3px rgb(13 96 111), 0px 2px 3px rgb(35 38 38);
+      }
     }
 
+    .forgot-text {
+      margin: 0 auto;
+      margin-top: 20px;
+  
+      a {
+        text-decoration: underline;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 18px;
+        color: #0D606F;
+      }
+    }
   }
 }
 
@@ -269,91 +302,6 @@
     border-color: #FFD829;
     outline: none;
 }
-
-  .select {
-    position: relative;
-    border: 1px solid #ffffff;
-    border-radius: 6px;
-    padding: 10px 15px;
-    background-color: #18191c;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: 300;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .select:focus {
-    outline: none;
-    border: 1px solid #ff8630;
-  }
-
-  .select-wrapper {
-    position: relative;
-  }
-
-  .select-wrapper::after {
-    content: "";
-    position: absolute;
-    top: calc(50% - 4px);
-    right: 15px;
-    width: 14px;
-    height: 8px;
-    background-image: url("images/arrow-down.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100%;
-  }
-
-  option {
-    font-weight: inherit;
-    font-family: inherit;
-    font-size: inherit;
-  }
-
-  .checkbox-wrapper {
-    position: relative;
-  }
-
-  .checkbox {
-    width: 24px;
-    height: 24px;
-    opacity: 0;
-    margin-right: 15px;
-  }
-
-  .checkbox + .checkbox-title::before {
-    content: '';
-    position: absolute;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #FFFFFF;
-    left: 0;
-    top: calc(50% - 12px);
-    border-radius: 6px;
-    cursor: pointer;
-  }
-
-  .checkbox:checked + .checkbox-title::after {
-    content: '';
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    background-color: #FFD829;
-    border-radius: 3px;
-    left: 5px;
-    top: calc(50% - 7px);
-    cursor: pointer;
-  }
-
-  .file-selector {
-    font-weight: 300;
-    font-family: inherit;
-    font-size: inherit;
-    cursor: pointer;
-  }
 
   .button {
     display: block;
@@ -487,4 +435,5 @@
 
   .fixed-window {
     position: fixed;
+    overflow-y: scroll;
   }

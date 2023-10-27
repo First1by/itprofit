@@ -53,48 +53,15 @@ form.onsubmit = (e) => {
 
 buttonPopup.onclick = () => {
   popup.classList.toggle('open-popup');
+  document.body.classList.toggle('fixed-window');
 }
 
 
-
-
-
-
-// nameInput.onchange = () => {
-//   if (!nameInput.value) {
-//     nameInput.classList.add('invalid');
-//     console.log('Invalid name');
-//     invalidText[0].classList.remove('d-none');
-//   };
-//   if (nameInput.value) {
-//     nameInput.classList.remove('invalid');
-//     invalidText[0].classList.add('d-none');
-//   };
-// }
-
-// emailInput.onchange = () => {
-//   if (!emailInput.value || !validateEmail(emailInput.value)) {
-//     emailInput.classList.add('invalid');
-//     invalidText[1].classList.remove('d-none');
-//   };
-//   if (emailInput.value && validateEmail(emailInput.value)) {
-//     emailInput.classList.remove('invalid')};
-// }
-
-// numberInput.onchange = () => {
-//   if (!numberInput.value) {
-//     numberInput.classList.add('invalid');
-//     numberInput.classList.remove('d-none');
-//   };
-//   if (numberInput.value) numberInput.classList.remove('invalid');
-// }
-
-// messageInput.onchange = () => {
-//   if (!messageInput.value) {
-//     messageInput.classList.add('invalid');
-//     messageInput.classList.add('invalid');
-//   };
-//   if (messageInput.value) messageInput.classList.remove('invalid');
-// }
+document.onclick = (e) => {
+  if(!e.target.closest('#button-open-popup') && !e.target.closest('.popup')){
+    popup.classList.remove('open-popup');
+    document.body.classList.remove('fixed-window');
+  }
+}
 
 
