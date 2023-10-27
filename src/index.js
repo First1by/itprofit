@@ -5,6 +5,10 @@ const numberInput = document.form.number;
 const messageInput = document.form.message;
 const invalidText = document.querySelectorAll('.invalid-text');
 
+const buttonPopup = document.getElementById('button-open-popup');
+const popup = document.querySelector('.popup');
+
+
 let validInput;
 
 const validateEmail = (email) => {
@@ -25,10 +29,10 @@ const validateEmptyInput = () => {
 
 const reset = () => {
   for (let i = 0; i < form.length - 1; i++) {
-      form[i].classList.remove('invalid');
-      invalidText[i].innerHTML = "";
-      validInput = true;
-    }
+    form[i].classList.remove('invalid');
+    invalidText[i].innerHTML = "";
+    validInput = true;
+  }
 }
 
 form.onsubmit = (e) => {
@@ -37,7 +41,7 @@ form.onsubmit = (e) => {
   validateEmptyInput();
 
   if (!nameInput.value || !emailInput.value || !numberInput.value || !messageInput.value) return;
-  if (!validateEmail(emailInput.value)){
+  if (!validateEmail(emailInput.value)) {
     emailInput.classList.add('invalid');
     invalidText[1].innerHTML = "Неккоректный Email";
     return;
@@ -47,6 +51,9 @@ form.onsubmit = (e) => {
   loader.style.display = "block";
 }
 
+buttonPopup.onclick = () => {
+  popup.classList.toggle('open-popup');
+}
 
 
 

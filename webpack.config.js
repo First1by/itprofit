@@ -5,7 +5,7 @@ const path = require('path');
 module.exports = {
     entry: './src/index.ts',
     module: {
-        rules: [  
+        rules: [
             /** Babel **/
             {
                 test: /\.m?js$/,
@@ -18,7 +18,7 @@ module.exports = {
                 }
                 // npm install babel-loader @babel/core @babel/preset-env -D
             },
-                /** Ts-Loader **/
+            /** Ts-Loader **/
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',
@@ -58,7 +58,7 @@ module.exports = {
             template: './index.html',
         }),
         new CopyWebpackPlugin({
-            patterns: [{ from: 'src/assets/images', to: 'assets/images' }],
+            patterns: [{ from: 'src/assets/img', to: 'assets/img' }],
         }),
     ],
     devServer: {
