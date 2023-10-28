@@ -13,20 +13,7 @@ module.exports = {
   plugins: [
     '@typescript-eslint', // Для TypeScript.
   ],
-  overrides: [
-    // Используем `overrides`, чтобы ESLint мог проверять файлы как JS, так и TS.
-    {
-      files: ['*.ts', '*.tsx'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:@typescript-eslint/recommended-requiring-type-checking',
-      ],
-      parserOptions: {
-        tsconfigRootDir: __dirname,
-        project: ['./tsconfig.json'],
-      },
-    },
-  ],
+
   ignorePatterns: ['.eslintrc.js'],
   rules: {
     quotes: ['error', 'single'], // Использовать двойные кавычки.
@@ -34,6 +21,6 @@ module.exports = {
     indent: ['error', 2], // Отступ — это два пробела.
     'prefer-regex-literals': ['off', { disallowRedundantWrapping: true }],
     'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
-    'comma-dangle': ['error', 'never'],
+    'comma-dangle': ['error', 'always-multiline'],
   },
 };

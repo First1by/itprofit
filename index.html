@@ -1,166 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
-    <link rel="stylesheet" href="index.css" />
-    <title>Itprofit</title>
-  </head>
 
-  <body>
-    <header class="header">
-      <div class="header-container">
-        <button id="button-open-popup" class="button button-yellow">Log in</button>
-      </div>
-      <div class="popup">
-        <p class="popup-title">Log in to your account</p>
-        <div class="facebook-btn">
-          <a href="https://www.facebook.com/">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
-              <rect width="24" height="24" transform="translate(0.5)" fill="#1877F2"></rect>
-              <path
-                d="M24 12.0699C24 5.71857 18.8513 0.569853 12.5 0.569853C6.14872 0.569853 1 5.71857 1 12.0699C1 17.8098 5.20538 22.5674 10.7031 23.4301V15.3941H7.7832V12.0699H10.7031V9.53626C10.7031 6.65407 12.42 5.06204 15.0468 5.06204C16.305 5.06204 17.6211 5.28665 17.6211 5.28665V8.11673H16.171C14.7424 8.11673 14.2969 9.00319 14.2969 9.91264V12.0699H17.4863L16.9765 15.3941H14.2969V23.4301C19.7946 22.5674 24 17.8098 24 12.0699Z"
-                fill="white"
-              ></path></svg
-            >Sign In with Facebook
-          </a>
-        </div>
-        <div class="google-btn">
-          <a href="https://www.google.com/">
-            <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="24" height="24" transform="translate(0.5)" fill="white"></rect>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M23.54 12.2614C23.54 11.4459 23.4668 10.6618 23.3309 9.90909H12.5V14.3575H18.6891C18.4225 15.795 17.6123 17.013 16.3943 17.8284V20.7139H20.1109C22.2855 18.7118 23.54 15.7636 23.54 12.2614Z"
-                fill="#4285F4"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12.5 23.4998C15.605 23.4998 18.2081 22.4701 20.1109 20.7137L16.3943 17.8282C15.3645 18.5182 14.0472 18.926 12.5 18.926C9.50474 18.926 6.96951 16.903 6.06519 14.1848H2.22314V17.1644C4.11542 20.9228 8.00451 23.4998 12.5 23.4998Z"
-                fill="#34A853"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M6.06523 14.1851C5.83523 13.4951 5.70455 12.758 5.70455 12.0001C5.70455 11.2421 5.83523 10.5051 6.06523 9.81506V6.83552H2.22318C1.44432 8.38802 1 10.1444 1 12.0001C1 13.8557 1.44432 15.6121 2.22318 17.1646L6.06523 14.1851Z"
-                fill="#FBBC05"
-              ></path>
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M12.5 5.07386C14.1884 5.07386 15.7043 5.65409 16.8961 6.79364L20.1945 3.49523C18.2029 1.63955 15.5997 0.5 12.5 0.5C8.00451 0.5 4.11542 3.07705 2.22314 6.83545L6.06519 9.815C6.96951 7.09682 9.50474 5.07386 12.5 5.07386Z"
-                fill="#EA4335"
-              ></path></svg
-            >Sign In with Google
-          </a>
-        </div>
-        <div class="horizontal-line"><span>or</span></div>
-        <form class="popup-form">
-          <label class="popup-label"
-            >E-mail
-            <input class="popup-input" type="email" name="email-popup" required="" />
-          </label>
-          <label class="popup-label"
-            >Password
-            <input
-              class="popup-input"
-              name="password-popup"
-              type="password"
-              maxlength="25"
-              size="40"
-              name="password"
-              required=""
-            />
-          </label>
-          <button class="popup-button" type="submit">Sign In</button>
-          <p class="forgot-text">
-            <a href="#">Forgot Your Password?</a>
-          </p>
-        </form>
-      </div>
-    </header>
-    <form class="form" name="form" action="/apply/" method="POST">
-      <label>
-        <span class="input-title">Имя:</span>
-        <input class="input" type="text" name="name" id="name" placeholder="Иван Иванов " autofocus="" />
-        <div class="invalid-text"></div>
-      </label>
-      <label>
-        <span class="input-title">Email:</span>
-        <input class="input" type="text" name="email" id="email" placeholder="ivan@gmail.com" />
-        <div class="invalid-text"></div>
-      </label>
-      <label>
-        <span class="input-title">Телефон:</span>
-        <input class="input" type="number" name="number" />
-        <div class="invalid-text"></div>
-      </label>
-      <label>
-        <span class="input-title">Сообщение:</span>
-        <textarea
-          class="input-textarea"
-          id="story"
-          name="message"
-          rows="4"
-          cols="33"
-          placeholder="Ваше сообщение..."
-        ></textarea>
-        <div class="invalid-text"></div>
-      </label>
-      <button class="button button-yellow" type="submit">Отправить заявку</button>
-      <div id="loader" class="d-none">Отправляем...</div>
-    </form>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com" />
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
+  <link rel="stylesheet"
+        href="index.css" />
+  <title>Itprofit</title>
+</head>
 
-    <footer class="footer">
-      <div class="description-container">
-        Test task for
-        <a class="itprofit-link" href="https://ru.itprofit.dev/" target="_blank"
-          ><svg width="70" height="25" viewBox="0 0 209 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0 35.3091V8.76364H5.08629V35.3091H0Z" fill="#444444" />
-            <path
-              d="M16.7694 35.3091V13.3091H9.21163V8.76364H29.4135V13.3091H21.8557V35.3091H16.7694Z"
-              fill="#444444"
-            />
-            <path
-              d="M33.4736 35.3091V8.58182H42.5C45.7954 8.58182 48.3385 9.39394 50.1295 11.0182C51.9443 12.6182 52.8517 14.8 52.8517 17.5636V18.1455C52.8517 20.9091 51.9443 23.103 50.1295 24.7273C48.3385 26.3515 45.7954 27.1636 42.5 27.1636H38.5599V35.3091H33.4736ZM42.9298 13.0545H38.5599V22.6909H42.9298C44.4581 22.6909 45.6282 22.2424 46.4401 21.3455C47.2759 20.4485 47.6938 19.2848 47.6938 17.8545C47.6938 16.4242 47.2759 15.2727 46.4401 14.4C45.6282 13.503 44.4581 13.0545 42.9298 13.0545Z"
-              fill="#444444"
-            />
-            <path
-              d="M57.0498 35.3091V8.58182H66.7567C69.8849 8.58182 72.3803 9.29697 74.2429 10.7273C76.1055 12.1576 77.0368 14.3273 77.0368 17.2364V17.8545C77.0368 19.8424 76.5831 21.4788 75.6756 22.7636C74.7921 24.0485 73.5623 24.9939 71.9863 25.6L78.971 35.3091H73.025L66.8642 26.4364H66.7567H62.1361V35.3091H57.0498ZM67.294 12.9818H62.1361V22.2545H67.294C68.679 22.2545 69.7894 21.8303 70.6252 20.9818C71.4609 20.1333 71.8788 19.0182 71.8788 17.6364C71.8788 16.2545 71.4609 15.1394 70.6252 14.2909C69.7894 13.4182 68.679 12.9818 67.294 12.9818Z"
-              fill="#444444"
-            />
-            <path
-              d="M94.7657 36C92.4017 36 90.3481 35.5758 88.6049 34.7273C86.8617 33.8788 85.417 32.7758 84.2708 31.4182C83.1485 30.0364 82.3127 28.5576 81.7635 26.9818C81.2142 25.3818 80.9396 23.8424 80.9396 22.3636V21.5636C80.9396 19.9394 81.2262 18.3273 81.7993 16.7273C82.3724 15.1273 83.232 13.6727 84.3782 12.3636C85.5483 11.0303 86.993 9.97576 88.7123 9.2C90.4316 8.4 92.4494 8 94.7657 8C97.0343 8 99.0282 8.4 100.747 9.2C102.491 9.97576 103.935 11.0303 105.082 12.3636C106.228 13.6727 107.087 15.1273 107.661 16.7273C108.258 18.3273 108.556 19.9394 108.556 21.5636V22.3636C108.556 23.8424 108.269 25.3818 107.696 26.9818C107.147 28.5576 106.299 30.0364 105.153 31.4182C104.031 32.7758 102.598 33.8788 100.855 34.7273C99.1357 35.5758 97.1059 36 94.7657 36ZM94.7657 31.2C96.5328 31.2 98.0611 30.7879 99.3506 29.9636C100.64 29.1152 101.631 27.9879 102.324 26.5818C103.04 25.1758 103.398 23.6485 103.398 22C103.398 20.2545 103.04 18.6909 102.324 17.3091C101.631 15.903 100.64 14.8 99.3506 14C98.0611 13.2 96.5328 12.8 94.7657 12.8C92.9748 12.8 91.4346 13.2 90.1451 14C88.8556 14.8 87.8527 15.903 87.1363 17.3091C86.4438 18.6909 86.0975 20.2545 86.0975 22C86.0975 23.6485 86.4438 25.1758 87.1363 26.5818C87.8288 27.9879 88.8198 29.1152 90.1093 29.9636C91.4226 30.7879 92.9748 31.2 94.7657 31.2Z"
-              fill="#444444"
-            />
-            <path
-              d="M113.472 35.3091V8.76364H128.802V13.1273H118.558V19.8909L128.301 19.8545V24.2182L118.558 24.2545V35.3091H113.472Z"
-              fill="#444444"
-            />
-            <path d="M133.586 35.3091V8.76364H138.673V35.3091H133.586Z" fill="#444444" />
-            <path d="M150.356 35.3091V13.3091H142.798V8.76364H163V13.3091H155.442V35.3091H150.356Z" fill="#444444" />
-            <path
-              d="M173 36C173 19.0294 173 10.5442 178.272 5.27208C183.544 0 192.029 0 209 0C209 16.9706 209 25.4558 203.728 30.7279C198.456 36 189.971 36 173 36Z"
-              fill="#FD0037"
-            />
-          </svg>
+<body>
+  <header class="header">
+    <div class="header-container">
+      <button id="button-open-popup"
+              class="button button-yellow">Log in</button>
+    </div>
+    <div class="popup">
+      <p class="popup-title">Log in to your account</p>
+      <div class="facebook-btn">
+        <a href="https://www.facebook.com/">
+          <svg xmlns="http://www.w3.org/2000/svg"
+               width="25"
+               height="24"
+               viewBox="0 0 25 24"
+               fill="none">
+            <rect width="24"
+                  height="24"
+                  transform="translate(0.5)"
+                  fill="#1877F2"></rect>
+            <path d="M24 12.0699C24 5.71857 18.8513 0.569853 12.5 0.569853C6.14872 0.569853 1 5.71857 1 12.0699C1 17.8098 5.20538 22.5674 10.7031 23.4301V15.3941H7.7832V12.0699H10.7031V9.53626C10.7031 6.65407 12.42 5.06204 15.0468 5.06204C16.305 5.06204 17.6211 5.28665 17.6211 5.28665V8.11673H16.171C14.7424 8.11673 14.2969 9.00319 14.2969 9.91264V12.0699H17.4863L16.9765 15.3941H14.2969V23.4301C19.7946 22.5674 24 17.8098 24 12.0699Z"
+                  fill="white"></path>
+          </svg>Sign In with Facebook
         </a>
       </div>
-      <div class="socials-container">
-        <a class="tel" href="tel:+375298596137">+375298596137</a>
-        <a class="mail" href="mailto:greysound1911@mail.ru">greysound1911@mail.ru</a>
-        <a class="job" href="https://rabota.by/resume/b3c3d240ff0c746e1d0039ed1f78734935664e" target="_blank">Resume</a>
+      <div class="google-btn">
+        <a href="https://www.google.com/">
+          <svg width="25"
+               height="24"
+               viewBox="0 0 25 24"
+               fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <rect width="24"
+                  height="24"
+                  transform="translate(0.5)"
+                  fill="white"></rect>
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M23.54 12.2614C23.54 11.4459 23.4668 10.6618 23.3309 9.90909H12.5V14.3575H18.6891C18.4225 15.795 17.6123 17.013 16.3943 17.8284V20.7139H20.1109C22.2855 18.7118 23.54 15.7636 23.54 12.2614Z"
+                  fill="#4285F4"></path>
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.5 23.4998C15.605 23.4998 18.2081 22.4701 20.1109 20.7137L16.3943 17.8282C15.3645 18.5182 14.0472 18.926 12.5 18.926C9.50474 18.926 6.96951 16.903 6.06519 14.1848H2.22314V17.1644C4.11542 20.9228 8.00451 23.4998 12.5 23.4998Z"
+                  fill="#34A853"></path>
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M6.06523 14.1851C5.83523 13.4951 5.70455 12.758 5.70455 12.0001C5.70455 11.2421 5.83523 10.5051 6.06523 9.81506V6.83552H2.22318C1.44432 8.38802 1 10.1444 1 12.0001C1 13.8557 1.44432 15.6121 2.22318 17.1646L6.06523 14.1851Z"
+                  fill="#FBBC05"></path>
+            <path fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M12.5 5.07386C14.1884 5.07386 15.7043 5.65409 16.8961 6.79364L20.1945 3.49523C18.2029 1.63955 15.5997 0.5 12.5 0.5C8.00451 0.5 4.11542 3.07705 2.22314 6.83545L6.06519 9.815C6.96951 7.09682 9.50474 5.07386 12.5 5.07386Z"
+                  fill="#EA4335"></path>
+          </svg>Sign In with Google
+        </a>
       </div>
-    </footer>
-    <script src="./src/index.js"></script>
-  </body>
+      <div class="horizontal-line"><span>or</span></div>
+      <form class="popup-form">
+        <label class="popup-label">E-mail
+          <input class="popup-input"
+                 type="email"
+                 name="email-popup"
+                 required="" />
+        </label>
+        <label class="popup-label">Password
+          <input class="popup-input"
+                 name="password-popup"
+                 type="password"
+                 maxlength="25"
+                 size="40"
+                 name="password"
+                 required="" />
+        </label>
+        <button class="popup-button"
+                type="submit">Sign In</button>
+        <p class="forgot-text">
+          <a href="#">Forgot Your Password?</a>
+        </p>
+      </form>
+    </div>
+  </header>
+  <form class="form"
+        name="form">
+    <label>
+      <span class="input-title">Имя:</span>
+      <input class="input"
+             type="text"
+             name="name"
+             id="name"
+             placeholder="Иван Иванов "
+             autofocus="" />
+      <div class="invalid-text"></div>
+    </label>
+    <label>
+      <span class="input-title">Email:</span>
+      <input class="input"
+             type="text"
+             name="email"
+             id="email"
+             placeholder="ivan@gmail.com" />
+      <div class="invalid-text"></div>
+    </label>
+    <label>
+      <span class="input-title">Телефон:</span>
+      <input class="input"
+             type="number"
+             name="number" />
+      <div class="invalid-text"></div>
+    </label>
+    <label>
+      <span class="input-title">Сообщение:</span>
+      <textarea class="input-textarea"
+                id="story"
+                name="message"
+                rows="4"
+                cols="33"
+                placeholder="Ваше сообщение..."></textarea>
+      <div class="invalid-text"></div>
+    </label>
+    <button class="button button-yellow"
+            type="submit">Отправить заявку</button>
+    <div id="loader"
+         class="d-none">Отправляем...</div>
+
+    <p class="success-text"></p>
+    <p class="error-text"></p>
+  </form>
+
+  <footer class="footer">
+    <div class="description-container">
+      Test task for
+      <a class="itprofit-link"
+         href="https://ru.itprofit.dev/"
+         target="_blank"><svg width="70"
+             height="25"
+             viewBox="0 0 209 36"
+             fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 35.3091V8.76364H5.08629V35.3091H0Z"
+                fill="#444444" />
+          <path d="M16.7694 35.3091V13.3091H9.21163V8.76364H29.4135V13.3091H21.8557V35.3091H16.7694Z"
+                fill="#444444" />
+          <path d="M33.4736 35.3091V8.58182H42.5C45.7954 8.58182 48.3385 9.39394 50.1295 11.0182C51.9443 12.6182 52.8517 14.8 52.8517 17.5636V18.1455C52.8517 20.9091 51.9443 23.103 50.1295 24.7273C48.3385 26.3515 45.7954 27.1636 42.5 27.1636H38.5599V35.3091H33.4736ZM42.9298 13.0545H38.5599V22.6909H42.9298C44.4581 22.6909 45.6282 22.2424 46.4401 21.3455C47.2759 20.4485 47.6938 19.2848 47.6938 17.8545C47.6938 16.4242 47.2759 15.2727 46.4401 14.4C45.6282 13.503 44.4581 13.0545 42.9298 13.0545Z"
+                fill="#444444" />
+          <path d="M57.0498 35.3091V8.58182H66.7567C69.8849 8.58182 72.3803 9.29697 74.2429 10.7273C76.1055 12.1576 77.0368 14.3273 77.0368 17.2364V17.8545C77.0368 19.8424 76.5831 21.4788 75.6756 22.7636C74.7921 24.0485 73.5623 24.9939 71.9863 25.6L78.971 35.3091H73.025L66.8642 26.4364H66.7567H62.1361V35.3091H57.0498ZM67.294 12.9818H62.1361V22.2545H67.294C68.679 22.2545 69.7894 21.8303 70.6252 20.9818C71.4609 20.1333 71.8788 19.0182 71.8788 17.6364C71.8788 16.2545 71.4609 15.1394 70.6252 14.2909C69.7894 13.4182 68.679 12.9818 67.294 12.9818Z"
+                fill="#444444" />
+          <path d="M94.7657 36C92.4017 36 90.3481 35.5758 88.6049 34.7273C86.8617 33.8788 85.417 32.7758 84.2708 31.4182C83.1485 30.0364 82.3127 28.5576 81.7635 26.9818C81.2142 25.3818 80.9396 23.8424 80.9396 22.3636V21.5636C80.9396 19.9394 81.2262 18.3273 81.7993 16.7273C82.3724 15.1273 83.232 13.6727 84.3782 12.3636C85.5483 11.0303 86.993 9.97576 88.7123 9.2C90.4316 8.4 92.4494 8 94.7657 8C97.0343 8 99.0282 8.4 100.747 9.2C102.491 9.97576 103.935 11.0303 105.082 12.3636C106.228 13.6727 107.087 15.1273 107.661 16.7273C108.258 18.3273 108.556 19.9394 108.556 21.5636V22.3636C108.556 23.8424 108.269 25.3818 107.696 26.9818C107.147 28.5576 106.299 30.0364 105.153 31.4182C104.031 32.7758 102.598 33.8788 100.855 34.7273C99.1357 35.5758 97.1059 36 94.7657 36ZM94.7657 31.2C96.5328 31.2 98.0611 30.7879 99.3506 29.9636C100.64 29.1152 101.631 27.9879 102.324 26.5818C103.04 25.1758 103.398 23.6485 103.398 22C103.398 20.2545 103.04 18.6909 102.324 17.3091C101.631 15.903 100.64 14.8 99.3506 14C98.0611 13.2 96.5328 12.8 94.7657 12.8C92.9748 12.8 91.4346 13.2 90.1451 14C88.8556 14.8 87.8527 15.903 87.1363 17.3091C86.4438 18.6909 86.0975 20.2545 86.0975 22C86.0975 23.6485 86.4438 25.1758 87.1363 26.5818C87.8288 27.9879 88.8198 29.1152 90.1093 29.9636C91.4226 30.7879 92.9748 31.2 94.7657 31.2Z"
+                fill="#444444" />
+          <path d="M113.472 35.3091V8.76364H128.802V13.1273H118.558V19.8909L128.301 19.8545V24.2182L118.558 24.2545V35.3091H113.472Z"
+                fill="#444444" />
+          <path d="M133.586 35.3091V8.76364H138.673V35.3091H133.586Z"
+                fill="#444444" />
+          <path d="M150.356 35.3091V13.3091H142.798V8.76364H163V13.3091H155.442V35.3091H150.356Z"
+                fill="#444444" />
+          <path d="M173 36C173 19.0294 173 10.5442 178.272 5.27208C183.544 0 192.029 0 209 0C209 16.9706 209 25.4558 203.728 30.7279C198.456 36 189.971 36 173 36Z"
+                fill="#FD0037" />
+        </svg>
+      </a>
+    </div>
+    <div class="socials-container">
+      <a class="tel"
+         href="tel:+375298596137">+375298596137</a>
+      <a class="mail"
+         href="mailto:greysound1911@mail.ru">greysound1911@mail.ru</a>
+      <a class="job"
+         href="https://rabota.by/resume/b3c3d240ff0c746e1d0039ed1f78734935664e"
+         target="_blank">Resume</a>
+    </div>
+  </footer>
+  <script src="./src/index.js"></script>
+</body>
+
 </html>

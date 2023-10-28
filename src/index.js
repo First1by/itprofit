@@ -8,6 +8,8 @@ const invalidText = document.querySelectorAll('.invalid-text');
 const buttonPopup = document.getElementById('button-open-popup');
 const popup = document.querySelector('.popup');
 const loader = document.getElementById('loader');
+const successText = document.querySelector('.success-text');
+const errorText = document.querySelector('.error-text');
 
 // eslint-disable-next-line no-unused-vars
 let validInput;
@@ -48,8 +50,29 @@ form.onsubmit = (e) => {
     return;
   }
 
-  form.submit();
   loader.style.display = 'block';
+  errorText.innerHTML = '';
+  successText.innerHTML = '';
+
+  const formData = new FormData(e.target);
+
+  fetch('http://localhost:9090/api/registration', {
+    method: 'POST',
+    body: formData,
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      console.log(result);
+      if (result.status === 'error') {
+        errorText.innerHTML = 'Произошла ошибка, попробуйте еще раз!';
+      } else if (result.status === 'success') {
+        successText.innerHTML = 'Ваша заявка успешно отправлена!';
+        form.reset();
+      }
+    })
+    .finally(() => {
+      loader.style.display = 'none';
+    });
 };
 
 buttonPopup.onclick = () => {

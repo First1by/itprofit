@@ -13,7 +13,7 @@ app.post('/api/registration', (req, res) => {
     setTimeout(() => {
       res.send({
         status: 'error',
-        message: 'Bad request'
+        message: 'Bad request',
       });
     }, Math.random() * 1000);
 
@@ -24,7 +24,7 @@ app.post('/api/registration', (req, res) => {
     res.statusCode = 200;
     res.send({
       status: 'success',
-      message: 'You are registered'
+      message: 'You are registered',
     });
   }, Math.random() * 1000);
 });
@@ -33,7 +33,7 @@ app.get('/api/ping', (req, res) => {
   res.statusCode = 200;
   res.send({
     status: 'success',
-    message: 'Server is ready'
+    message: 'Server is ready',
   });
 });
 
