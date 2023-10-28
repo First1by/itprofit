@@ -34,5 +34,6 @@ module.exports = {
     indent: ['error', 2], // Отступ — это два пробела.
     'prefer-regex-literals': ['off', { disallowRedundantWrapping: true }],
     'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
+    'comma-dangle': ['error', 'never'],
   },
 };
