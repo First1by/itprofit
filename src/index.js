@@ -1,8 +1,10 @@
 import btnEventHandlers from './popup';
+import Inputmask from 'inputmask';
+
 const form = document.form;
 const nameInput = document.form.name;
 const emailInput = document.form.email;
-const numberInput = document.form.number;
+const numberInput = document.form.phone;
 const messageInput = document.form.message;
 const invalidText = document.querySelectorAll('.invalid-text');
 
@@ -13,6 +15,8 @@ btnEventHandlers();
 
 // Validation
 let validInput;
+let im = new Inputmask({ mask: '+375-99-999-99-99' });
+im.mask(numberInput);
 
 const validateEmail = (email) => {
   const regex = new RegExp('[a-z0-9]+@[a-z]+.[a-z]{2,3}');

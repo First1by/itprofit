@@ -258,12 +258,6 @@ label {
   line-height: 1;
 }
 
-.input::after {
-  content: 'Неккоректный Email';
-  display: block;
-  position: absolute;
-}
-
 .input,
 .button,
 .select,
@@ -437,5 +431,4 @@ label {
 .fixed-window {
   position: fixed;
   overflow-y: scroll;
-  // height: 100vh;
 }

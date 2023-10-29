@@ -8,7 +8,7 @@ module.exports = {
     rules: [
       /** Babel **/
       {
-        test: /\.m?js$/,
+        test: /\.js$|jsx/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: 'babel-loader',
@@ -16,7 +16,6 @@ module.exports = {
             presets: ['@babel/preset-env'],
           },
         },
-        // npm install babel-loader @babel/core @babel/preset-env -D
       },
 
       /** SCSS/SAAS */
@@ -30,6 +29,11 @@ module.exports = {
           // Compiles Sass to CSS
           'sass-loader',
         ],
+      },
+      /** CSS */
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.html$/,

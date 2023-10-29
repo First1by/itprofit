@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -231,12 +230,6 @@ label {
   font-size: 24px;
   font-weight: 500;
   line-height: 1;
-}
-
-.input::after {
-  content: "Неккоректный Email";
-  display: block;
-  position: absolute;
 }
 
 .input,
