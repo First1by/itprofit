@@ -53,10 +53,7 @@ module.exports = {
       template: './index.html',
     }),
     new CopyWebpackPlugin({
-      patterns: [
-        { from: 'src/assets/img', to: 'assets/img' },
-        { from: './src/index.css', to: './' },
-      ],
+      patterns: [{ from: './src', to: './' }],
     }),
   ],
   devServer: {

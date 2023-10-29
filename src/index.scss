@@ -352,14 +352,6 @@ label {
   text-align: center;
 }
 
-.success-text {
-  color: #adff2f;
-}
-
-.error-text {
-  color: #ff0000;
-}
-
 .invalid {
   border: 1px solid red;
 }
@@ -445,4 +437,5 @@ label {
 .fixed-window {
   position: fixed;
   overflow-y: scroll;
+  // height: 100vh;
 }

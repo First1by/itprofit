@@ -1,3 +1,4 @@
+import btnEventHandlers from './popup';
 const form = document.form;
 const nameInput = document.form.name;
 const emailInput = document.form.email;
@@ -5,13 +6,12 @@ const numberInput = document.form.number;
 const messageInput = document.form.message;
 const invalidText = document.querySelectorAll('.invalid-text');
 
-const buttonPopup = document.getElementById('button-open-popup');
-const popup = document.querySelector('.popup');
 const loader = document.getElementById('loader');
-const successText = document.querySelector('.success-text');
-const errorText = document.querySelector('.error-text');
+const stateText = document.querySelector('.state-text');
 
-// eslint-disable-next-line no-unused-vars
+btnEventHandlers();
+
+// Validation
 let validInput;
 
 const validateEmail = (email) => {
@@ -50,39 +50,33 @@ form.onsubmit = (e) => {
     return;
   }
 
-  loader.style.display = 'block';
-  errorText.innerHTML = '';
-  successText.innerHTML = '';
+  isLoading('block');
+  resultTextRequest('');
 
-  const formData = new FormData(e.target);
-
-  fetch('http://localhost:9090/api/registration', {
-    method: 'POST',
-    body: formData,
-  })
-    .then((res) => res.json())
-    .then((result) => {
-      console.log(result);
-      if (result.status === 'error') {
-        errorText.innerHTML = 'Произошла ошибка, попробуйте еще раз!';
-      } else if (result.status === 'success') {
-        successText.innerHTML = 'Ваша заявка успешно отправлена!';
-        form.reset();
-      }
-    })
-    .finally(() => {
-      loader.style.display = 'none';
+  async function submitForm() {
+    const response = await fetch('http://localhost:9090/api/registration', {
+      method: 'POST',
+      body: new FormData(form),
     });
-};
 
-buttonPopup.onclick = () => {
-  popup.classList.toggle('open-popup');
-  document.body.classList.toggle('fixed-window');
-};
-
-document.onclick = (e) => {
-  if (!e.target.closest('#button-open-popup') && !e.target.closest('.popup')) {
-    popup.classList.remove('open-popup');
-    document.body.classList.remove('fixed-window');
+    const result = await response.json();
+    if (result.status === 'error') {
+      resultTextRequest('Произошла ошибка, попробуйте еще раз!', '#ff0000');
+    } else if (result.status === 'success') {
+      resultTextRequest('Ваша заявка успешно отправлена!', '#adff2f');
+      form.reset();
+    }
   }
+  submitForm().finally(isLoading('none'));
 };
+
+// Result text after submit
+
+function resultTextRequest(state, colorText) {
+  stateText.innerHTML = state;
+  stateText.style.color = `${colorText}`;
+}
+
+function isLoading(display) {
+  loader.style.display = display;
+}

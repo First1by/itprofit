@@ -22,5 +22,6 @@ module.exports = {
     'prefer-regex-literals': ['off', { disallowRedundantWrapping: true }],
     'no-unused-vars': ['warn', { vars: 'all', args: 'after-used', ignoreRestSiblings: false }],
     'comma-dangle': ['error', 'always-multiline'],
+    'space-before-function-paren': ['error', 'never'],
   },
 };
